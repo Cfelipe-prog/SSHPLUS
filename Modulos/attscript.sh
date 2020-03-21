@@ -22,7 +22,7 @@ touch $HOME/fim
 
  tput civis
 
-echo -ne "   \033[1;33mAGUARDE \033[1;37m- \033[1;33m["
+echo -ne "   \033[1;33mEspere \033[1;37m- \033[1;33m["
 
 while true; do
 
@@ -44,7 +44,7 @@ while true; do
 
    tput dl1
 
-   echo -ne "   \033[1;33mAGUARDE \033[1;37m- \033[1;33m["
+   echo -ne "   \033[1;33mEspere \033[1;37m- \033[1;33m["
 
 done
 
@@ -62,7 +62,7 @@ fun_atts () {
 
   [[ -e /tmp/att ]] && rm /tmp/att
 
-	wget -c -P /home https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Install/versao
+	wget -c -P /home https://raw.githubusercontent.com/Cfelipe-prog/SSHPLUS/master/Install/versao
 
 	[[ -f "/home/versao" ]] && mv /home/versao /tmp/att
 
@@ -76,15 +76,15 @@ echo -e "   SSHPlus" | figlet
 
 echo " "
 
-echo -e "   \033[1;32mVERIFICANDO ATUALIZACOES DISPONIVEIS\033[0m\n"
+echo -e "   \033[1;32mVERIFICANDO ACTUALIZACIONES DISPONIBLES\033[0m\n"
 
 fun_bar 'fun_atts'
 
 [[ ! -f "/tmp/att" ]] && {
 
-	echo -e "\n\033[1;31m ERRO AO CONECTAR AO SERVIDOR\n"
+	echo -e "\n\033[1;31m ERROR AL CONECTAR AL SERVIDOR\n"
 
-	echo -ne "\033[1;31m ENTER \033[1;33mpara retornar ao \033[1;32mMENU!\033[0m"; read
+	echo -ne "\033[1;31m ENTER \033[1;33mpara volver al \033[1;32mMENU!\033[0m"; read
 
 	menu
 
@@ -98,7 +98,7 @@ vrs2=$(sed -n '1 p' /tmp/att | sed -e 's/[^0-9]//ig')
 
 [[ "$vrs1" == "$vrs2" ]] && {
 
-  echo -e " \033[1;36m     O SCRIPT JA ESTA ATUALIZADO!\033[1;32m\n"
+  echo -e " \033[1;36m     EL SCRIPT ESTA ACTUALIZADO!\033[1;32m\n"
 
   rm /tmp/att > /dev/null 2>&1
 
@@ -110,11 +110,11 @@ vrs2=$(sed -n '1 p' /tmp/att | sed -e 's/[^0-9]//ig')
 
 } || {
 
-  echo -e "  \033[1;36mEXISTE UMA NOVA ATUALIZACAO DISPONIVEL!\033[1;33m\n"
+  echo -e "  \033[1;36mEXISTE UNA NUEVA ACTUALIZACION DISPONIBLE!\033[1;33m\n"
 
   echo -e "  \033[1;33mMAIS INFORMACOES \033[1;31m(\033[1;36mTELEGRAM\033[1;31m): \033[1;37m@crazy_vpn\n"
 
-  echo -e "  \033[1;32mDETALHES DA ATUALIZACAO:\033[0m\n"
+  echo -e "  \033[1;32mDETALLES DE LA ACTUALIZACION:\033[0m\n"
 
   while read linha; do
 
@@ -124,15 +124,15 @@ vrs2=$(sed -n '1 p' /tmp/att | sed -e 's/[^0-9]//ig')
 
   echo " "
 
-  echo -ne "  \033[1;32mDESEJA ATUALIZAR \033[1;31m? \033[1;33m[s/n]:\033[1;37m "; read res
+  echo -ne "  \033[1;32mDESEA ACTUALIZAR \033[1;31m? \033[1;33m[s/n]:\033[1;37m "; read res
 
   if [[ "$res" = s || "$res" = S ]];then
 
-    echo -e "\n\033[1;32m  INICIANDO ATUALIZACAO..."
+    echo -e "\n\033[1;32m  INICIANDO ACTUALIZACIAON..."
 
     sleep 3
 
-    wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/SSHPLUS-MANAGER-FREE/master/Plus > /dev/null 2>&1
+    wget https://raw.githubusercontent.com/Cfelipe-prog/SSHPLUS/master/Plus > /dev/null 2>&1
 
     chmod +x Plus
 
@@ -140,11 +140,11 @@ vrs2=$(sed -n '1 p' /tmp/att | sed -e 's/[^0-9]//ig')
 
     clear
 
-    echo -e "\033[1;32mSCRIPT ATUALIZADO COM SUCESSO\033[0m\n"
+    echo -e "\033[1;32mSCRIPT ACTUALIZADO CON EXITO!\033[0m\n"
 
     rm /tmp/att > /dev/null 2>&1
 
-    echo -ne "\033[1;31mENTER \033[1;33mpara retornar ao \033[1;32mMENU!\033[0m"; read
+    echo -ne "\033[1;31mENTER \033[1;33mpara volver al \033[1;32mMENU!\033[0m"; read
 
     menu
 
