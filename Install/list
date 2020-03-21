@@ -1,5 +1,5 @@
 #!/bin/bash
-_lvk=$(wget -qO- https://raw.githubusercontent.com/Cfelipe-prog/SSHPLUS/master/_%24_Version/SSHPLUS%20v21/versao)
+_lvk=$(wget -qO- https://raw.githubusercontent.com/Cfelipe-prog/SSHPLUS/master/act/versao)
 IP=$(wget -qO- ipv4.icanhazip.com/)
 IP2=$(wget -qO- http://whatismyip.akamai.com/)
 [[ "$IP" != "$IP2" ]] && ipdovps="$IP2" || ipdovps="$IP"
