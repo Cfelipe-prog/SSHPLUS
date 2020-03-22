@@ -316,8 +316,9 @@ else
                           tput setaf 7 ; tput setab 4 ; tput bold ; echo "" ; echo "Número de conexões simultâneas deve ser maior que zero!" ; echo "" ; tput sgr0
                           exit 1
                         else
-                          final=$(date "+%Y-%m-%d" -d "+$dias days")
-                          gui=$(date "+%d/%m/%Y" -d "+$dias days")
+                          final=$(date '+%C%y-%m-%d' -d " +$dias days")
+                          
+                          gui=$(date "+%F" -d " + $dias days")
                           pass=$(perl -e 'print crypt($ARGV[0], "password")' $password)
                           sleep 0.5s
                           useradd -e $final -M -s /bin/false -p $pass $username
