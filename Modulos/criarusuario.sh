@@ -241,13 +241,13 @@ fun_edithost () {
   fi
 }
 [[ ! -e /usr/lib/sshplus ]] && rm -rf /bin/ > /dev/null 2>&1
-tput setaf 7 ; tput setab 4 ; tput bold ; printf '%30s%s%-15s\n' "Criar usuário SSH" ; tput sgr0
+tput setaf 7 ; tput setab 4 ; tput bold ; printf '%30s%s%-15s\n' "Crear usuario ssh" ; tput sgr0
 echo ""
-echo -ne "\033[1;32mNome do usuário:\033[1;37m "; read username
+echo -ne "\033[1;32mNombre de usuario:\033[1;37m "; read username
 awk -F : ' { print $1 }' /etc/passwd > /tmp/users 
 if grep -Fxq "$username" /tmp/users
 then
-  tput setaf 7 ; tput setab 4 ; tput bold ; echo "" ; echo "Este usuário já existe. tente outro nome." ; echo "" ; tput sgr0
+  tput setaf 7 ; tput setab 4 ; tput bold ; echo "" ; echo "Este usuario ya existe. intente otro nombre." ; echo "" ; tput sgr0
   exit 1  
 else
   if (echo $username | egrep [^a-zA-Z0-9.-_] &> /dev/null)

@@ -91,7 +91,7 @@ else
 						echo ""
 						exit 1
 					else
-						chage -E $sysdate $usuario
+						chage -E $udata $usuario
 						echo ""
 						tput setaf 7 ; tput setab 4 ; tput bold ; echo "Sucesso Usuário $usuario nova data: $udata " ; tput sgr0
 						echo ""
